@@ -11,7 +11,8 @@
 - service 端口名称不以http- or tcp- or grpc-开头则拒绝创建
 - 以上部分规则，同时也对cronjob做了类似的限制
 
-### service端口名字不符合规范的，拒绝创建，打印详细信息
+### 拒绝创建示例
+service端口名字不符合规范的，拒绝创建，打印详细信息
 ```
 root@k8s-node-6:~/manifests/test-opa/service# kubectl -n test-opa create -f test-svc-err-no-name.yaml 
 Error from server: error when creating "test-svc-err-no-name.yaml": admission webhook "validating-webhook.openpolicyagent.org" denied the request: service port name should not be empty and must start with http- or tcp- or grpc-
